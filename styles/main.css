@@ -122,3 +122,24 @@ span {
     line-height: 4em;
     border-radius: 50%;
 }
+
+#filter {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    background-color: purple;
+    padding: 1em;
+    height: 3.5rem;
+}
+
+#filter span {
+    color: thistle;
+    margin-right: 1em;
+}
+
+#filter button {
+    background-color: thistle;
+    padding: 0.5em 0.5em;
+    border-radius: 0.5em;
+    font-weight: bold;
+}
