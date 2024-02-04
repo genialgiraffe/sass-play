@@ -1,0 +1,71 @@
+body {
+    min-width: 300px;
+    max-width: 480px;
+}
+
+main {
+    background-color: bisque;
+}
+
+p,
+h2,
+h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#title {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+}
+
+#title h1 {
+    color: blueviolet;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#logo {
+    width: 25%;
+}
+
+#about {
+    margin-left: 0.5em;
+}
+
+#about p {
+    margin-left: 1em;
+}
+
+#menu {
+    padding: 1em 0;
+}
+
+#menu h2 {
+    text-align: center;
+}
+
+#alergens {
+    font-size: smaller;
+    background-color: #eee;
+    padding: 0.5em;
+}
+
+#alergens .important {
+    font-weight: bold;
+}
+
+#copyright {
+    background-color: #006;
+    padding: 0.1em 2em;
+}
+
+#copyright p {
+    font-size: small;
+    color: #eee;
+    text-indent: -1em;
+}
+
+#copyright span {
+    font-size: large;
+    vertical-align: middle;
+}
