@@ -1,5 +1,5 @@
 body {
-    min-width: 300px;
+    min-width: 400px;
     max-width: 480px;
 }
 
@@ -90,21 +90,20 @@ span {
     vertical-align: middle;
 }
 
-#menu {
-    padding: 1em 0;
-}
-
 #menu h2 {
     text-align: center;
 }
 
 #menu ul {
     list-style-type: none;
+    width: 80%;
+    margin: auto;
+    padding: 0 0 1em 0;
 }
 
 #menu li {
     background-color: purple;
-    width: 80%;
+    width: 75%;
     color: thistle;
     border-radius: 0.5em;
     padding: 0.5em 2em;
@@ -130,6 +129,13 @@ span {
     background-color: purple;
     padding: 1em;
     height: 3.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#filter::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
 }
 
 #filter span {
@@ -139,7 +145,7 @@ span {
 
 #filter button {
     background-color: thistle;
-    padding: 0.5em 0.5em;
+    padding: 1em 3em;
     border-radius: 0.5em;
     font-weight: bold;
 }
