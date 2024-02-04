@@ -17,6 +17,7 @@ h3 {
     display: flex;
     gap: 1em;
     justify-content: center;
+    align-items: center;
 }
 
 #title h1 {
@@ -36,12 +37,8 @@ h3 {
     margin-left: 1em;
 }
 
-#menu {
-    padding: 1em 0;
-}
-
-#menu h2 {
-    text-align: center;
+#about h2 {
+    color: purple;
 }
 
 #alergens {
@@ -51,6 +48,25 @@ h3 {
 }
 
 #alergens .important {
+    font-weight: bold;
+}
+
+#contact {
+    background-color: thistle;
+    padding: 0.5em;
+}
+
+#contact h2 {
+    margin-left: 0.5em;
+}
+
+#contact ul {
+    list-style-type: none;
+}
+
+#contact li {
+    margin-top: 1em;
+    font-size: larger;
     font-weight: bold;
 }
 
@@ -68,4 +84,16 @@ h3 {
 #copyright span {
     font-size: large;
     vertical-align: middle;
+}
+
+#menu {
+    padding: 1em 0;
+}
+
+#menu h2 {
+    text-align: center;
+}
+
+#menu h2 {
+    text-align: center;
 }
