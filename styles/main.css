@@ -144,8 +144,15 @@ span {
 }
 
 #filter button {
-    background-color: thistle;
+    background-color: #eee;
     padding: 1em 3em;
     border-radius: 0.5em;
     font-weight: bold;
+    color: #555;
+}
+
+#filter .selected {
+    border: 3px solid black;
+    background-color: thistle;
+    color: black;
 }

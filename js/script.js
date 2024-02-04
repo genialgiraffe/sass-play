@@ -1,6 +1,17 @@
 console.log("script loaded");
 
-function initMenuItems(menu) {
+FILTER_SELECTED_CLASS = "selected";
+
+let FILTER = {
+    MEALS: "MEALS",
+    DESSERTS: "DESSERTS",
+    DRINKS: "DRINKS"
+}
+
+let CURRENT_FILTER = [FILTER.MEALS, FILTER.DESSERTS, FILTER.DRINKS];
+
+function refreshMenuItems() {
+    let menu = document.getElementById("menu-list")
     if (!menu) {
         console.log("menu not found");
         return;
@@ -9,8 +20,13 @@ function initMenuItems(menu) {
     console.log("creating new menu");
     menu.innerHTML = "";
 
-    let items = getMenuItems()
+    let items = getMenuItems(CURRENT_FILTER);
     items.forEach((info => menu.append(buildItemHtml(info))));
+}
+
+function initFilterButton(button, filterValue) {
+    button.onclick = function () { onClickFilter(this, filterValue); }
+    button.classList.add(FILTER_SELECTED_CLASS);
 }
 
 {/* 
@@ -32,12 +48,30 @@ function buildItemHtml(info) {
     return item;
 }
 
-function getMenuItems() {
+function getMenuItems(filter) {
     let menu = [];
-    menu.push(...getAllMeals());
-    menu.push(...getAllDesserts());
-    menu.push(...getAllDrinks());
+    if (filter.indexOf(FILTER.MEALS) > -1) {
+        menu.push(...getAllMeals());
+    }
+    if (filter.indexOf(FILTER.DESSERTS) > -1) {
+        menu.push(...getAllDesserts());
+    }
+    if (filter.indexOf(FILTER.DRINKS) > -1) {
+        menu.push(...getAllDrinks());
+    }
     return menu;
+}
+
+function onClickFilter(button, filterClicked) {
+    if (CURRENT_FILTER.indexOf(filterClicked) > -1) {
+        CURRENT_FILTER = CURRENT_FILTER.filter(item => item !== filterClicked);
+        button.classList.remove(FILTER_SELECTED_CLASS);
+    } else {
+        CURRENT_FILTER.push(filterClicked);
+        button.classList.add(FILTER_SELECTED_CLASS);
+    }
+    console.log("New filter selection", CURRENT_FILTER);
+    refreshMenuItems();
 }
 
 function getAllDrinks() {
@@ -74,5 +108,8 @@ function getAllDesserts() {
 
 window.onload = function () {
     console.log("window.onload invoked");
-    initMenuItems(document.getElementById("menu-list"));
+    refreshMenuItems();
+    initFilterButton(document.getElementById("filter-meals"), FILTER.MEALS);
+    initFilterButton(document.getElementById("filter-desserts"), FILTER.DESSERTS);
+    initFilterButton(document.getElementById("filter-drinks"), FILTER.DRINKS);
 };
