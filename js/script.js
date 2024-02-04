@@ -9,7 +9,7 @@ function initMenuItems(menu) {
     console.log("creating new menu");
     menu.innerHTML = "";
 
-    let items = getSampleDrinks()
+    let items = getMenuItems()
     items.forEach((info => menu.append(buildItemHtml(info))));
 }
 
@@ -32,7 +32,15 @@ function buildItemHtml(info) {
     return item;
 }
 
-function getSampleDrinks() {
+function getMenuItems() {
+    let menu = [];
+    menu.push(...getAllMeals());
+    menu.push(...getAllDesserts());
+    menu.push(...getAllDrinks());
+    return menu;
+}
+
+function getAllDrinks() {
     return [
         { name: "Orange juice", price: "$1.99" },
         { name: "Sparkling Water", price: "$2" },
@@ -40,6 +48,27 @@ function getSampleDrinks() {
         { name: "Milkshake", price: "$4.75" },
         { name: "Hot coffee", price: "$1" },
         { name: "Green tea", price: "$2.50" }
+    ]
+}
+
+function getAllMeals() {
+    return [
+        { name: "Buffalo Chicken", price: "$12.99" },
+        { name: "Corndog", price: "$6" },
+        { name: "Sloppy Joe", price: "$14.50" },
+        { name: "Mac 'n' Cheese", price: "$10" },
+        { name: "Tater Tot Casserole", price: "$8.75" },
+    ]
+}
+
+function getAllDesserts() {
+    return [
+        { name: "Banana Split", price: "$7.50" },
+        { name: "Apple Pie", price: "$9" },
+        { name: "Key Lime Pie", price: "$9" },
+        { name: "Lemon Pound Cake", price: "$6" },
+        { name: "Blueberry Muffin", price: "$6" },
+        { name: "Cream Puff", price: "$6" },
     ]
 }
 
