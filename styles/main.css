@@ -3,6 +3,13 @@ body {
     max-width: 480px;
 }
 
+#wrap {
+    /* fallback for Safari 14  */
+    overflow: hidden;
+    /* prefer clip to allow sticky header descendant*/
+    overflow: clip;
+}
+
 main {
     background-color: bisque;
 }
@@ -43,10 +50,15 @@ span {
 }
 
 #alergens {
-    margin-top: 1em;
+    margin-top: 2em;
     font-size: smaller;
+    line-height: 1.8em;
     background-color: #eee;
-    padding: 0.5em;
+    padding: 1.5em 1em;
+}
+
+#alergens p {
+    margin-bottom: 2em;
 }
 
 #alergens .important {
@@ -54,9 +66,9 @@ span {
 }
 
 #contact {
-    margin-top: 1em;
+    margin-top: 2em;
     background-color: thistle;
-    padding: 0.5em;
+    padding: 1.5em 0.5em;
 }
 
 #contact h2 {
@@ -68,15 +80,15 @@ span {
 }
 
 #contact li {
-    margin-top: 1em;
+    margin-top: 2em;
     font-size: larger;
     font-weight: bold;
 }
 
 #copyright {
-    margin-top: 1em;
+    margin-top: 2em;
     background-color: #006;
-    padding: 0.1em 2em;
+    padding: 1em 2em;
 }
 
 #copyright p {
@@ -131,6 +143,11 @@ span {
     height: 3.5rem;
     overflow-x: auto;
     overflow-y: hidden;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
 }
 
 #filter::-webkit-scrollbar {
