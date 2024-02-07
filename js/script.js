@@ -76,23 +76,44 @@ function onClickFilter(button, filterClicked) {
     scrollTopMenuItemIntoView();
 }
 
-function scrollTopMenuItemIntoView() {
-    let menuTitle = document.getElementById("menu-title");
+function decorateMenuFilterOnSticky() {
     let menuFilter = document.getElementById("filter");
-    if (menuTitle && menuFilter) {
-        const offset = menuFilter.offsetHeight;
-        const y = menuTitle.getBoundingClientRect().top + window.scrollY - offset;
-        console.log("Scrolling to top of menu", y);
-        window.scrollTo({ top: y, behavior: 'smooth' });
-    } else {
-        console.log("Failed to find elements to scroll", menuTitle, menuFilter)
+    let observer = new IntersectionObserver(
+        ([e]) => {
+            let isSticky = e.boundingClientRect.top < 0;
+            if (isSticky) {
+                console.log("STICK", e);
+            } else {
+                console.log("unstick", e);
+            }
+            e.target.classList.toggle('isSticky', isSticky);
+        },
+        { threshold: [1] }
+    );
+
+    observer.observe(menuFilter)
+}
+
+function scrollTopMenuItemIntoView() {
+    let menuFilter = document.getElementById("filter");
+    if (!menuFilter) {
+        console.log("Failed to find menu filter");
+        return;
+    }
+    if (!menuFilter.classList.contains("isSticky")) {
+        console.log("Skip scroll when element not sticky");
+        return;
     }
 
-    // let items = document.getElementsByClassName("menu-item");
-    // if (items.length > 0) {
-    //     console.log("Scrolling to item", items[0]);
-    //     items[0].scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-    // }
+    let menuTitle = document.getElementById("menu-title");
+    if (!menuTitle) {
+        console.log("Failed to find menu title")
+    }
+
+    const offset = menuFilter.offsetHeight;
+    const y = menuTitle.getBoundingClientRect().top + window.scrollY - offset;
+    console.log("Scrolling to top of menu", y);
+    window.scrollTo({ top: y, behavior: 'smooth' });
 }
 
 function getAllDrinks() {
@@ -133,4 +154,5 @@ window.onload = function () {
     initFilterButton(document.getElementById("filter-meals"), FILTER.MEALS);
     initFilterButton(document.getElementById("filter-desserts"), FILTER.DESSERTS);
     initFilterButton(document.getElementById("filter-drinks"), FILTER.DRINKS);
+    decorateMenuFilterOnSticky();
 };

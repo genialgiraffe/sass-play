@@ -1,9 +1,11 @@
 body {
     min-width: 400px;
     max-width: 480px;
+    overflow-x: hidden;
 }
 
 #wrap {
+    /* testing position sticky issue*/
     /* fallback for Safari 14  */
     overflow: hidden;
     /* prefer clip to allow sticky header descendant*/
@@ -139,15 +141,18 @@ span {
     align-items: center;
     gap: 1em;
     background-color: purple;
-    padding: 1em;
     height: 3.5rem;
     overflow-x: auto;
     overflow-y: hidden;
+    position: sticky;
+    padding: 1em;
+    /* -1px to catch isSticky */
+    padding-top: calc(1em + 1px);
+    top: -1px;
 }
 
-.sticky {
-    position: sticky;
-    top: 0;
+.isSticky {
+    border: 1px solid violet;
 }
 
 #filter::-webkit-scrollbar {
