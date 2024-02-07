@@ -146,13 +146,13 @@ span {
     overflow-y: hidden;
     position: sticky;
     padding: 1em;
-    /* -1px to catch isSticky */
-    padding-top: calc(1em + 1px);
+    /* -1px to detect isSticky */
     top: -1px;
+    border-top: 1px solid transparent;
 }
 
 .isSticky {
-    border: 1px solid violet;
+    border-bottom: 1px solid violet;
 }
 
 #filter::-webkit-scrollbar {
