@@ -1,0 +1,184 @@
+body {
+    min-width: 400px;
+    max-width: 480px;
+    overflow-x: hidden;
+}
+
+#wrap {
+    /* testing position sticky issue*/
+    /* fallback for Safari 14  */
+    overflow: hidden;
+    /* prefer clip to allow sticky header descendant*/
+    overflow: clip;
+}
+
+main {
+    background-color: bisque;
+}
+
+h2,
+h3,
+p,
+span {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#title {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+
+#title h1 {
+    color: blueviolet;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#logo {
+    width: 25%;
+}
+
+#about {
+    margin-left: 0.5em;
+    background-image: url('./img/cake.png');
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+#about p {
+    margin-left: 1em;
+}
+
+#about h2 {
+    color: purple;
+}
+
+#alergens {
+    margin-top: 2em;
+    font-size: smaller;
+    line-height: 1.8em;
+    background-color: #eee;
+    padding: 1.5em 1em;
+}
+
+#alergens p {
+    margin-bottom: 2em;
+}
+
+#alergens .important {
+    font-weight: bold;
+}
+
+#contact {
+    margin-top: 2em;
+    background-color: thistle;
+    padding: 1.5em 0.5em;
+}
+
+#contact h2 {
+    margin-left: 0.5em;
+}
+
+#contact ul {
+    list-style-type: none;
+}
+
+#contact li {
+    margin-top: 2em;
+    font-size: larger;
+    font-weight: bold;
+}
+
+#copyright {
+    margin-top: 2em;
+    background-color: #006;
+    padding: 1em 2em;
+}
+
+#copyright p {
+    font-size: small;
+    color: #eee;
+    text-indent: -1em;
+}
+
+#copyright span {
+    font-size: large;
+    vertical-align: middle;
+}
+
+#menu h2 {
+    text-align: center;
+}
+
+#menu ul {
+    list-style-type: none;
+    width: 80%;
+    margin: auto;
+    padding: 0 0 1em 0;
+}
+
+.menu-item {
+    background-color: purple;
+    width: 75%;
+    color: thistle;
+    border-radius: 0.5em;
+    padding: 0.5em 2em;
+    margin-bottom: 0.25em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    background-color: thistle;
+    color: purple;
+    text-align: center;
+    width: 4em;
+    line-height: 4em;
+    border-radius: 50%;
+}
+
+#filter {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    background-color: purple;
+    height: 3.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: sticky;
+    padding: 1em;
+    /* -1px to detect isSticky */
+    top: -1px;
+    border-top: 1px solid transparent;
+}
+
+.isSticky {
+    border-bottom: 1px solid violet;
+}
+
+#filter::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}
+
+#filter span {
+    color: thistle;
+    margin-right: 1em;
+}
+
+#filter button {
+    background-color: #999;
+    padding: 1em 3em;
+    border-radius: 0.5em;
+    font-weight: bold;
+    color: #555;
+}
+
+#filter .selected {
+    border: 3px solid black;
+    background-color: thistle;
+    color: black;
+}

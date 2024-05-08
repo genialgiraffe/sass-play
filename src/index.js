@@ -1,6 +1,8 @@
+import './index.css';
+
 console.log("script loaded");
 
-FILTER_SELECTED_CLASS = "selected";
+let FILTER_SELECTED_CLASS = "selected";
 
 let FILTER = {
     MEALS: "MEALS",

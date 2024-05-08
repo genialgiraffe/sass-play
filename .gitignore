@@ -1,6 +1,9 @@
 # NodeJS
-
 /node_modules
 
 # compiled output
 /dist
+
+# System Files
+.DS_Store
+Thumbs.db

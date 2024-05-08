@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <div id="title">
+                <img id="logo" src="<%= require('./img/coffee.jpg') %>" alt="coffee cup logo for the cafe" />
+                <h1>
+                    <%= htmlWebpackPlugin.options.title %>
+                </h1>
+            </div>
+            <div id="about">
+                <h2>Welcome to the home of tasty.</h2>
+                <p>Drinks, food, snacks.</p>
+                <p>Dine in or order to takeaway.</p>
+                <p>Serving delicious since 2020</p>
+            </div>
+        </header>
+        <main id="menu">
+            <div id="filter">
+                <span>Filter:</span>
+                <button id="filter-meals">Meals</button>
+                <button id="filter-desserts">Desserts</button>
+                <button id="filter-drinks">Drinks</button>
+            </div>
+            <h2 id="menu-title">The menu</h2>
+            <ul id="menu-list">
+            </ul>
+        </main>
+        <section id="alergens">
+            <h2>Alergen info</h2>
+            <p class="important">All food is prepared in a shared kitchen so we cannot guarantee the absence of
+                alergens.
+            </p>
+            <p>The 14 allergens are: celery, cereals containing gluten (such as wheat, barley and oats), crustaceans
+                (such
+                as prawns, crabs and lobsters), eggs, fish, lupin, milk, molluscs (such as mussels and oysters),
+                mustard,
+                peanuts, sesame, soybeans, sulphur dioxide and sulphites (if the sulphur dioxide and sulphites are at a
+                concentration of more than ten parts per million) and tree nuts (such as almonds, hazelnuts, walnuts,
+                brazil
+                nuts, cashews, pecans, pistachios and macadamia nuts).</p>
+            <p>This also applies to additives, processing aids and any other substances which are present in the final
+                product.</p>
+            <p>Please ask your server for more details.</p>
+        </section>
+        <section id="contact">
+            <h2>To reserve a table, please contact us</h2>
+            <ul>
+                <li>
+                    <span>Email: <a href="mailto:thecafe@theinternet.com">thecafe@theinternet.com</a></span>
+                </li>
+                <li>
+                    <span>Call: <a href="tel:123-456-7890">123-456-7890</a></span>
+                </li>
+            </ul>
+        </section>
+        <section id="copyright">
+            <p>
+                <span id="cc-symbol">©</span>
+                2020-2024 Tech Much Menu Design, Tech Much Menu Design Corp Inc.
+            </p>
+        </section>
+    </div>
+</body>
+
+</html>
