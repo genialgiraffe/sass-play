@@ -1,3 +1,9 @@
+@font-face {
+    font-family: "ShadowsIntoLightTwo-Regular";
+    src:
+        url("./fonts/ShadowsIntoLightTwo-Regular.ttf")
+}
+
 body {
     min-width: 400px;
     max-width: 480px;
@@ -31,8 +37,8 @@ span {
 }
 
 #title h1 {
+    font-family: ShadowsIntoLightTwo-Regular;
     color: blueviolet;
-    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 #logo {
@@ -52,6 +58,7 @@ span {
 }
 
 #about h2 {
+    font-family: ShadowsIntoLightTwo-Regular;
     color: purple;
 }
 
@@ -78,6 +85,7 @@ span {
 }
 
 #contact h2 {
+    font-family: ShadowsIntoLightTwo-Regular;
     margin-left: 0.5em;
 }
 
@@ -109,6 +117,7 @@ span {
 }
 
 #menu h2 {
+    font-family: ShadowsIntoLightTwo-Regular;
     text-align: center;
 }
 

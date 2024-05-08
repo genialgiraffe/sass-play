@@ -20,7 +20,17 @@ module.exports = {
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset',
+                generator: {
+                    filename: 'img/[name]-[hash][ext]',
+                }
+            },
+            {
+                test: /\.(ttf)$/i,
                 type: 'asset/resource',
+                generator: {
+                    filename: 'fonts/[name]-[hash][ext]',
+                }
             },
         ],
     },
