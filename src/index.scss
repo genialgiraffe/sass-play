@@ -1,3 +1,6 @@
+$color-accent-primary: #AE1E1E;
+$color-accent-secondary: #EACBBD;
+
 @font-face {
     font-family: "ShadowsIntoLightTwo-Regular";
     src:
@@ -19,7 +22,7 @@ body {
 }
 
 main {
-    background-color: bisque;
+    background-color: $color-accent-secondary;
 }
 
 h2,
@@ -38,7 +41,8 @@ span {
 
 #title h1 {
     font-family: ShadowsIntoLightTwo-Regular;
-    color: blueviolet;
+    font-weight: 900;
+    color: $color-accent-primary;
 }
 
 #logo {
@@ -59,7 +63,7 @@ span {
 
 #about h2 {
     font-family: ShadowsIntoLightTwo-Regular;
-    color: purple;
+    color: $color-accent-primary;
 }
 
 #alergens {
@@ -80,7 +84,7 @@ span {
 
 #contact {
     margin-top: 2em;
-    background-color: thistle;
+    background-color: $color-accent-secondary;
     padding: 1.5em 0.5em;
 }
 
@@ -129,9 +133,9 @@ span {
 }
 
 .menu-item {
-    background-color: purple;
+    background-color: $color-accent-primary;
     width: 75%;
-    color: thistle;
+    color: $color-accent-secondary;
     border-radius: 0.5em;
     padding: 0.5em 2em;
     margin-bottom: 0.25em;
@@ -141,8 +145,8 @@ span {
 }
 
 .price {
-    background-color: thistle;
-    color: purple;
+    background-color: $color-accent-secondary;
+    color: black;
     text-align: center;
     width: 4em;
     line-height: 4em;
@@ -153,7 +157,7 @@ span {
     display: flex;
     align-items: center;
     gap: 1em;
-    background-color: purple;
+    background-color: $color-accent-primary;
     height: 3.5rem;
     overflow-x: auto;
     overflow-y: hidden;
@@ -165,7 +169,7 @@ span {
 }
 
 .isSticky {
-    border-bottom: 1px solid violet;
+    border-bottom: 1px solid $color-accent-secondary;
 }
 
 #filter::-webkit-scrollbar {
@@ -174,7 +178,7 @@ span {
 }
 
 #filter span {
-    color: thistle;
+    color: $color-accent-secondary;
     margin-right: 1em;
 }
 
@@ -188,6 +192,6 @@ span {
 
 #filter .selected {
     border: 3px solid black;
-    background-color: thistle;
+    background-color: $color-accent-secondary;
     color: black;
 }

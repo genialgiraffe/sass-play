@@ -2,7 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: [
+        './src/index.js',
+        './src/index.scss',
+    ],
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
@@ -13,6 +16,23 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: 'resolve-url-loader',
+                    }, {
+                        loader: 'sass-loader',
+                        options: {
+                            implementation: require.resolve("sass"), // Prefer `dart-sass`
+                            sourceMap: true,
+                            warnRuleAsWarning: true,
+                        }
+                    }
+                ],
             },
             {
                 test: /\.html$/i,

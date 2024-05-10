@@ -1,5 +1,3 @@
-import './index.css';
-
 console.log("script loaded");
 
 let FILTER_SELECTED_CLASS = "selected";
