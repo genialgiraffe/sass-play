@@ -1,5 +1,26 @@
-$color-accent-primary: #AE1E1E;
-$color-accent-secondary: #EACBBD;
+:root {
+    --color-text-primary: #AE1E1E;
+    --color-text-secondary: #EACBBD;
+    --color-text-tertiary: #000;
+    --color-bg-primary: #EEA;
+    --color-bg-secondary: #AE1E1E;
+    --color-bg-tertiary: #EACBBD;
+    --setting-filter: 0;
+}
+
+:root[data-theme="dark"] {
+    --color-text-primary: #ffec24;
+    --color-text-secondary: ffec24;
+    --color-text-tertiary: #000;
+    --color-bg-primary: #710b0b;
+    --color-bg-secondary: #863100;
+    --color-bg-tertiary: #ffec24;
+    --setting-filter: 1;
+
+    .invertible {
+        filter: invert(var(--setting-filter));
+    }
+}
 
 @font-face {
     font-family: "ShadowsIntoLightTwo-Regular";
@@ -8,6 +29,7 @@ $color-accent-secondary: #EACBBD;
 }
 
 body {
+    background: var(--color-bg-primary);
     min-width: 400px;
     max-width: 480px;
     overflow-x: hidden;
@@ -22,7 +44,7 @@ body {
 }
 
 main {
-    background-color: $color-accent-secondary;
+    background-color: var(--color-bg-secondary);
 }
 
 h2,
@@ -42,19 +64,27 @@ span {
 #title h1 {
     font-family: ShadowsIntoLightTwo-Regular;
     font-weight: 900;
-    color: $color-accent-primary;
+    color: var(--color-text-primary);
 }
 
 #logo {
     width: 25%;
+    border-radius: 1em;
 }
 
-#about {
-    margin-left: 0.5em;
-    background-image: url('./img/cake.png');
+#about-wrapper {
+    background-image: url(./img/cake.png);
     background-size: contain;
     background-position: right;
     background-repeat: no-repeat;
+    filter: invert(var(--setting-filter));
+}
+
+#about {
+    color: var(--color-text-primary);
+    position: relative;
+    margin-left: 0.5em;
+    filter: invert(var(--setting-filter)); // undo parent bg-img filter (if any)
 }
 
 #about p {
@@ -63,7 +93,6 @@ span {
 
 #about h2 {
     font-family: ShadowsIntoLightTwo-Regular;
-    color: $color-accent-primary;
 }
 
 #alergens {
@@ -84,7 +113,8 @@ span {
 
 #contact {
     margin-top: 2em;
-    background-color: $color-accent-secondary;
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-secondary);
     padding: 1.5em 0.5em;
 }
 
@@ -97,6 +127,10 @@ span {
     list-style-type: none;
 }
 
+#contact a {
+    color: var(--color-text-secondary);
+}
+
 #contact li {
     margin-top: 2em;
     font-size: larger;
@@ -105,13 +139,13 @@ span {
 
 #copyright {
     margin-top: 2em;
-    background-color: #006;
+    background-color: var(--color-bg-secondary);
     padding: 1em 2em;
 }
 
 #copyright p {
     font-size: small;
-    color: #eee;
+    color: var(--color-text-secondary);
     text-indent: -1em;
 }
 
@@ -123,6 +157,7 @@ span {
 #menu h2 {
     font-family: ShadowsIntoLightTwo-Regular;
     text-align: center;
+    color: var(--color-text-secondary);
 }
 
 #menu ul {
@@ -133,9 +168,9 @@ span {
 }
 
 .menu-item {
-    background-color: $color-accent-primary;
+    background-color: var(--color-bg-primary);
     width: 75%;
-    color: $color-accent-secondary;
+    color: var(--color-text-primary);
     border-radius: 0.5em;
     padding: 0.5em 2em;
     margin-bottom: 0.25em;
@@ -145,8 +180,8 @@ span {
 }
 
 .price {
-    background-color: $color-accent-secondary;
-    color: black;
+    background-color: var(--color-bg-tertiary);
+    color: var(--color-text-tertiary);
     text-align: center;
     width: 4em;
     line-height: 4em;
@@ -157,7 +192,7 @@ span {
     display: flex;
     align-items: center;
     gap: 1em;
-    background-color: $color-accent-primary;
+    background-color: var(--color-bg-secondary);
     height: 3.5rem;
     overflow-x: auto;
     overflow-y: hidden;
@@ -169,7 +204,7 @@ span {
 }
 
 .isSticky {
-    border-bottom: 1px solid $color-accent-secondary;
+    border-bottom: 1px solid var(--color-bg-primary);
 }
 
 #filter::-webkit-scrollbar {
@@ -178,20 +213,25 @@ span {
 }
 
 #filter span {
-    color: $color-accent-secondary;
+    color: var(--color-text-secondary);
     margin-right: 1em;
 }
 
 #filter button {
-    background-color: #999;
+    background-color: var(--color-bg-tertiary);
+    border: 2px solid var(--color-bg-tertiary);
     padding: 1em 3em;
     border-radius: 0.5em;
     font-weight: bold;
-    color: #555;
+    color: var(--color-text-tertiary);
+}
+
+#filter button:hover:not(.selected) {
+    filter: brightness(110%);
+    border: 2px solid var(--color-bg-secondary);
 }
 
 #filter .selected {
-    border: 3px solid black;
-    background-color: $color-accent-secondary;
-    color: black;
+    filter: brightness(110%);
+    border: 2px solid var(--color-text-tertiary);
 }

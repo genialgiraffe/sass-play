@@ -1,0 +1,107 @@
+<html>
+
+<head>
+    <style>
+        #sample1 {
+            --text-primary: #AE1E1E;
+            --text-secondary: #EACBBD;
+            --text-tertiary: #000;
+            --bg-primary: #EEA;
+            --bg-secondary: #AE1E1E;
+            --bg-tertiary: #EACBBD;
+        }
+
+        #sample2 {
+            --text-primary: #ffec24;
+            --text-secondary: ffec24;
+            --text-tertiary: #000;
+            --bg-primary: #710b0b;
+            --bg-secondary: #863100;
+            --bg-tertiary: #ffec24;
+        }
+
+        body {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
+
+        .bg {
+            width: 45%;
+            background-color: var(--bg-primary);
+            padding: 2rem;
+        }
+
+        section {
+            background-color: var(--bg-secondary);
+            padding: 0.5rem;
+        }
+
+        .panel {
+            background-color: var(--bg-tertiary);
+            border: 1px dashed var(--bg-tertiary);
+            padding: 0.25rem 1rem;
+            margin: 0.25rem;
+            border-radius: 1rem;
+            width: fit-content;
+        }
+
+        .panel:hover:not(.selected, .disabled) {
+            filter: brightness(110%);
+            border: 1px solid var(--bg-secondary);
+        }
+
+        .selected {
+            filter: brightness(110%);
+            border: 2px solid var(--text-tertiary);
+        }
+
+        .disabled {
+            filter: brightness(60%);
+            border: 1px dotted var(--text-tertiary);
+        }
+
+        .text-primary {
+            color: var(--text-primary);
+        }
+
+        .text-secondary {
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="sample1" class="bg">
+        <h1 class="text-primary">Text 1</h1>
+        <section>
+            <h2 class="text-secondary">Text 2</h2>
+            <div class="panel">
+                <p class="text-tertiary">Text 1</p>
+            </div>
+            <div class="panel selected">
+                <p class="text-tertiary">Text 1</p>
+            </div>
+            <div class="panel disabled">
+                <p class="text-tertiary">Text 1</p>
+            </div>
+        </section>
+    </div>
+    <div id="sample2" class="bg">
+        <h1 class="text-primary">Text 1</h1>
+        <section>
+            <h2 class="text-secondary">Text 2</h2>
+            <div class="panel">
+                <p class="text-tertiary">Text 1</p>
+            </div>
+            <div class="panel selected">
+                <p class="text-tertiary">Text 1</p>
+            </div>
+            <div class="panel disabled">
+                <p class="text-tertiary">Text 1</p>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

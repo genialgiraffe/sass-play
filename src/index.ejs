@@ -1,4 +1,4 @@
-<html>
+<html data-theme="dark">
 
 <head>
     <title>
@@ -10,16 +10,19 @@
     <div id="wrap">
         <header>
             <div id="title">
-                <img id="logo" src="<%= require('./img/coffee.jpg') %>" alt="coffee cup logo for the cafe" />
+                <img id="logo" class="invertible" src="<%= require('./img/coffee.jpg') %>"
+                    alt="coffee cup logo for the cafe" />
                 <h1>
                     <%= htmlWebpackPlugin.options.title %>
                 </h1>
             </div>
-            <div id="about">
-                <h2>Welcome to the home of tasty.</h2>
-                <p>Drinks, food, snacks.</p>
-                <p>Dine in or order to takeaway.</p>
-                <p>Serving delicious since 2020</p>
+            <div id="about-wrapper">
+                <div id="about">
+                    <h2>Welcome to the home of tasty.</h2>
+                    <p>Drinks, food, snacks.</p>
+                    <p>Dine in or order to takeaway.</p>
+                    <p>Serving delicious since 2020</p>
+                </div>
             </div>
         </header>
         <main id="menu">
