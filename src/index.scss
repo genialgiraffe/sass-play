@@ -1,20 +1,27 @@
+$color-dark-red: #AE1E1E;
+$color-mid-pink: #EACBBD;
+$color-cream: #EEA;
+$color-mid-yellow: #ffec24;
+$color-dark-brown: #710b0b;
+$color-mid-brown: #863100;
+
 :root {
-    --color-text-primary: #AE1E1E;
-    --color-text-secondary: #EACBBD;
-    --color-text-tertiary: #000;
-    --color-bg-primary: #EEA;
-    --color-bg-secondary: #AE1E1E;
-    --color-bg-tertiary: #EACBBD;
+    --color-text-primary: #{$color-dark-red};
+    --color-text-secondary: #{$color-mid-pink};
+    --color-text-tertiary: black;
+    --color-bg-primary: #{$color-cream};
+    --color-bg-secondary: #{$color-dark-red};
+    --color-bg-tertiary: #{$color-mid-pink};
     --setting-filter: 0;
 }
 
 :root[data-theme="dark"] {
-    --color-text-primary: #ffec24;
-    --color-text-secondary: ffec24;
-    --color-text-tertiary: #000;
-    --color-bg-primary: #710b0b;
-    --color-bg-secondary: #863100;
-    --color-bg-tertiary: #ffec24;
+    --color-text-primary: #{$color-mid-yellow};
+    --color-text-secondary: #{$color-mid-yellow};
+    --color-text-tertiary: black;
+    --color-bg-primary: #{$color-dark-brown};
+    --color-bg-secondary: #{$color-mid-brown};
+    --color-bg-tertiary: #{$color-mid-yellow};
     --setting-filter: 1;
 
     .invertible {
@@ -52,6 +59,59 @@ h3,
 p,
 span {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.form-control {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+// reset radio button
+input[type="radio"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: #fff;
+    /* Not removed via appearance */
+    margin: 0;
+}
+
+#color-mode {
+    background-color: white;
+    border-radius: 5px;
+    padding: 0.5rem 0;
+}
+
+#color-mode label {
+    padding: 0.5rem;
+}
+
+#color-mode-dark {
+    background-color: black;
+    color: white;
+    border-radius: 0 5px 5px 0;
+}
+
+#color-mode-light {
+    background-color: white;
+    color: black;
+    border-radius: 5px 0 0 5px;
+}
+
+#color-mode input {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: grey;
+    margin-right: 0.5rem;
+}
+
+#color-mode input:checked {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: red;
+    margin-right: 0.5rem;
 }
 
 #title {

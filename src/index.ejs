@@ -1,4 +1,4 @@
-<html data-theme="dark">
+<html>
 
 <head>
     <title>
@@ -15,6 +15,12 @@
                 <h1>
                     <%= htmlWebpackPlugin.options.title %>
                 </h1>
+                <div id="color-mode" class="form-control">
+                    <label id="color-mode-light"><input type="radio" id="light-mode" name="color-mode" value="light"
+                            checked>Light</label>
+                    <label id="color-mode-dark"><input type="radio" id="dark-mode" name="color-mode"
+                            value="dark">Dark</label>
+                </div>
             </div>
             <div id="about-wrapper">
                 <div id="about">

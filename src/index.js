@@ -148,8 +148,20 @@ function getAllDesserts() {
     ]
 }
 
+function onColorModeClick(e) {
+    const mode = e.target.value;
+    document.documentElement.setAttribute("data-theme", mode);
+    console.log(`Switch mode ${mode}`);
+}
+
+function createColorModeSwitcher() {
+    document.getElementById("light-mode").onclick = onColorModeClick;
+    document.getElementById("dark-mode").onclick = onColorModeClick;
+}
+
 window.onload = function () {
     console.log("window.onload invoked");
+    createColorModeSwitcher();
     refreshMenuItems();
     initFilterButton(document.getElementById("filter-meals"), FILTER.MEALS);
     initFilterButton(document.getElementById("filter-desserts"), FILTER.DESSERTS);
