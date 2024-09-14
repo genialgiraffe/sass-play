@@ -1,39 +1,6 @@
-$color-dark-red: #AE1E1E;
-$color-mid-pink: #EACBBD;
-$color-cream: #EEA;
-$color-mid-yellow: #ffec24;
-$color-dark-brown: #710b0b;
-$color-mid-brown: #863100;
+@use 'base' as *;
 
-:root {
-    --color-text-primary: #{$color-dark-red};
-    --color-text-secondary: #{$color-mid-pink};
-    --color-text-tertiary: black;
-    --color-bg-primary: #{$color-cream};
-    --color-bg-secondary: #{$color-dark-red};
-    --color-bg-tertiary: #{$color-mid-pink};
-    --setting-filter: 0;
-}
-
-:root[data-theme="dark"] {
-    --color-text-primary: #{$color-mid-yellow};
-    --color-text-secondary: #{$color-mid-yellow};
-    --color-text-tertiary: black;
-    --color-bg-primary: #{$color-dark-brown};
-    --color-bg-secondary: #{$color-mid-brown};
-    --color-bg-tertiary: #{$color-mid-yellow};
-    --setting-filter: 1;
-
-    .invertible {
-        filter: invert(var(--setting-filter));
-    }
-}
-
-@font-face {
-    font-family: "ShadowsIntoLightTwo-Regular";
-    src:
-        url("./fonts/ShadowsIntoLightTwo-Regular.ttf")
-}
+@include base-styles;
 
 body {
     background: var(--color-bg-primary);
@@ -58,11 +25,11 @@ h2,
 h3,
 p,
 span {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--font-content);
 }
 
 .form-control {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--font-content);
 }
 
 // reset radio button
@@ -122,7 +89,7 @@ input[type="radio"] {
 }
 
 #title h1 {
-    font-family: ShadowsIntoLightTwo-Regular;
+    font-family: var(--font-heading);
     font-weight: 900;
     color: var(--color-text-primary);
 }
@@ -133,7 +100,7 @@ input[type="radio"] {
 }
 
 #about-wrapper {
-    background-image: url(./img/cake.png);
+    background-image: url('../assets/img/cake.png');
     background-size: contain;
     background-position: right;
     background-repeat: no-repeat;
@@ -152,7 +119,7 @@ input[type="radio"] {
 }
 
 #about h2 {
-    font-family: ShadowsIntoLightTwo-Regular;
+    font-family: var(--font-heading);
 }
 
 #alergens {
@@ -179,7 +146,7 @@ input[type="radio"] {
 }
 
 #contact h2 {
-    font-family: ShadowsIntoLightTwo-Regular;
+    font-family: var(--font-heading);
     margin-left: 0.5em;
 }
 
@@ -215,7 +182,7 @@ input[type="radio"] {
 }
 
 #menu h2 {
-    font-family: ShadowsIntoLightTwo-Regular;
+    font-family: var(--font-heading);
     text-align: center;
     color: var(--color-text-secondary);
 }

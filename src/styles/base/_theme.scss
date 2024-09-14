@@ -1,0 +1,15 @@
+@mixin theme ($text-primary,
+    $text-secondary,
+    $text-tertiary,
+    $bg-primary,
+    $bg-secondary,
+    $bg-tertiary,
+    $filter) {
+    --color-text-primary: #{$text-primary};
+    --color-text-secondary: #{$text-secondary};
+    --color-text-tertiary: #{$text-tertiary};
+    --color-bg-primary: #{$bg-primary};
+    --color-bg-secondary: #{$bg-secondary};
+    --color-bg-tertiary: #{$bg-tertiary};
+    --setting-filter: #{$filter};
+}

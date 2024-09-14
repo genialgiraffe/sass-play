@@ -1,0 +1,4 @@
+@mixin fonts ($font-heading, $font-content) {
+    --font-heading: #{$font-heading};
+    --font-content: #{$font-content};
+}
