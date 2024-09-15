@@ -1,13 +1,9 @@
 @use 'base' as *;
+@use 'theme-picker' as *;
 
-@include base-styles;
+@include base-styles();
+@include theme-picker-styles();
 
-body {
-    background: var(--color-bg-primary);
-    min-width: 400px;
-    max-width: 480px;
-    overflow-x: hidden;
-}
 
 #wrap {
     /* testing position sticky issue*/
@@ -15,70 +11,6 @@ body {
     overflow: hidden;
     /* prefer clip to allow sticky header descendant*/
     overflow: clip;
-}
-
-main {
-    background-color: var(--color-bg-secondary);
-}
-
-h2,
-h3,
-p,
-span {
-    font-family: var(--font-content);
-}
-
-.form-control {
-    font-family: var(--font-content);
-}
-
-// reset radio button
-input[type="radio"] {
-    /* Add if not using autoprefixer */
-    -webkit-appearance: none;
-    appearance: none;
-    /* For iOS < 15 to remove gradient background */
-    background-color: #fff;
-    /* Not removed via appearance */
-    margin: 0;
-}
-
-#color-mode {
-    background-color: white;
-    border-radius: 5px;
-    padding: 0.5rem 0;
-}
-
-#color-mode label {
-    padding: 0.5rem;
-}
-
-#color-mode-dark {
-    background-color: black;
-    color: white;
-    border-radius: 0 5px 5px 0;
-}
-
-#color-mode-light {
-    background-color: white;
-    color: black;
-    border-radius: 5px 0 0 5px;
-}
-
-#color-mode input {
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 50%;
-    background-color: grey;
-    margin-right: 0.5rem;
-}
-
-#color-mode input:checked {
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 50%;
-    background-color: red;
-    margin-right: 0.5rem;
 }
 
 #title {

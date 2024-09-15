@@ -1,0 +1,11 @@
+@mixin fonts() {
+    @font-face {
+        font-family: "ShadowsIntoLightTwo-Regular";
+        src: url("../../assets/fonts/ShadowsIntoLightTwo-Regular.ttf");
+    }
+
+    :root {
+        --font-heading: "ShadowsIntoLightTwo-Regular";
+        --font-content: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+}

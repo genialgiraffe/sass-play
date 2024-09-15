@@ -1,0 +1,40 @@
+@use 'foundations/color' as *;
+@use 'foundations/font' as *;
+
+@mixin base-styles() {
+    @include fonts();
+    @include colors();
+
+    .form-control {
+        font-family: var(--font-content);
+    }
+
+    // reset radio button
+    input[type="radio"] {
+        /* Add if not using autoprefixer */
+        -webkit-appearance: none;
+        appearance: none;
+        /* For iOS < 15 to remove gradient background */
+        background-color: #fff;
+        /* Not removed via appearance */
+        margin: 0;
+    }
+
+    body {
+        background: var(--color-bg-primary);
+        min-width: 400px;
+        max-width: 480px;
+        overflow-x: hidden;
+    }
+
+    h2,
+    h3,
+    p,
+    span {
+        font-family: var(--font-content);
+    }
+
+    main {
+        background-color: var(--color-bg-secondary);
+    }
+}

@@ -1,0 +1,48 @@
+$color-dark-red: #AE1E1E;
+$color-mid-pink: #EACBBD;
+$color-cream: #EEA;
+$color-mid-yellow: #ffec24;
+$color-dark-brown: #710b0b;
+$color-mid-brown: #863100;
+
+@mixin -init ($text-primary,
+    $text-secondary,
+    $text-tertiary,
+    $bg-primary,
+    $bg-secondary,
+    $bg-tertiary,
+    $filter) {
+    --color-text-primary: #{$text-primary};
+    --color-text-secondary: #{$text-secondary};
+    --color-text-tertiary: #{$text-tertiary};
+    --color-bg-primary: #{$bg-primary};
+    --color-bg-secondary: #{$bg-secondary};
+    --color-bg-tertiary: #{$bg-tertiary};
+    --setting-filter: #{$filter};
+}
+
+@mixin colors() {
+    :root {
+        @include -init($color-dark-red,
+            $color-mid-pink,
+            black,
+            $color-cream,
+            $color-dark-red,
+            $color-mid-pink,
+            0);
+    }
+
+    :root[data-theme="dark"] {
+        @include -init($color-mid-yellow,
+            $color-mid-yellow,
+            black,
+            $color-dark-brown,
+            $color-mid-brown,
+            $color-mid-yellow,
+            1);
+
+        .invertible {
+            filter: invert(var(--setting-filter));
+        }
+    }
+}
