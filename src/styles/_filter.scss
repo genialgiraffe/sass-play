@@ -1,0 +1,49 @@
+@mixin styles() {
+    #filter {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        background-color: var(--color-bg-secondary);
+        height: 3.5rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        position: sticky;
+        padding: 1em;
+        /* -1px to detect isSticky */
+        top: -1px;
+        border-top: 1px solid transparent;
+
+        span {
+            color: var(--color-text-secondary);
+            margin-right: 1em;
+        }
+
+        button {
+            background-color: var(--color-bg-tertiary);
+            border: 2px solid var(--color-bg-tertiary);
+            padding: 1em 3em;
+            border-radius: 0.5em;
+            font-weight: bold;
+            color: var(--color-text-tertiary);
+
+            &:hover:not(.selected) {
+                filter: brightness(110%);
+                border: 2px solid var(--color-bg-secondary);
+            }
+        }
+
+        .selected {
+            filter: brightness(110%);
+            border: 2px solid var(--color-text-tertiary);
+        }
+    }
+
+    .isSticky {
+        border-bottom: 1px solid var(--color-bg-primary);
+    }
+
+    #filter::-webkit-scrollbar {
+        display: none;
+        /* Safari and Chrome */
+    }
+}

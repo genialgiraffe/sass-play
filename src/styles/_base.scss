@@ -1,9 +1,9 @@
-@use 'foundations/color' as *;
-@use 'foundations/font' as *;
+@use 'foundations/color';
+@use 'foundations/font';
 
-@mixin base-styles() {
-    @include fonts();
-    @include colors();
+@mixin styles() {
+    @include font.init();
+    @include color.init();
 
     .form-control {
         font-family: var(--font-content);
@@ -20,6 +20,14 @@
         margin: 0;
     }
 
+    #wrap {
+        /* testing position sticky issue*/
+        /* fallback for Safari 14  */
+        overflow: hidden;
+        /* prefer clip to allow sticky header descendant*/
+        overflow: clip;
+    }
+
     body {
         background: var(--color-bg-primary);
         min-width: 400px;
@@ -27,10 +35,21 @@
         overflow-x: hidden;
     }
 
-    h2,
+    h1 {
+        font-size: var(--text-xl);
+        font-family: var(--font-heading);
+        font-weight: 900;
+    }
+
+    h2 {
+        font-size: var(--text-lg);
+        font-family: var(--font-heading);
+    }
+
     h3,
     p,
     span {
+        font-size: var(--text-base);
         font-family: var(--font-content);
     }
 

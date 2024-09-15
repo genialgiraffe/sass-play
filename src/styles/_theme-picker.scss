@@ -1,39 +1,40 @@
-@mixin theme-picker-styles() {}
+@mixin styles() {
+    #color-mode {
+        background-color: white;
+        border-radius: 5px;
+        padding: 0.5rem 0;
 
-#color-mode {
-    background-color: white;
-    border-radius: 5px;
-    padding: 0.5rem 0;
-}
+        label {
+            padding: 0.5rem;
+            user-select: none;
+        }
 
-#color-mode label {
-    padding: 0.5rem;
-}
+        input {
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
+            background-color: grey;
+            margin-right: 0.5rem;
+        }
 
-#color-mode-dark {
-    background-color: black;
-    color: white;
-    border-radius: 0 5px 5px 0;
-}
+        input:checked {
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
+            background-color: red;
+            margin-right: 0.5rem;
+        }
+    }
 
-#color-mode-light {
-    background-color: white;
-    color: black;
-    border-radius: 5px 0 0 5px;
-}
+    #color-mode-dark {
+        background-color: black;
+        color: white;
+        border-radius: 0 5px 5px 0;
+    }
 
-#color-mode input {
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 50%;
-    background-color: grey;
-    margin-right: 0.5rem;
-}
-
-#color-mode input:checked {
-    width: 0.75rem;
-    height: 0.75rem;
-    border-radius: 50%;
-    background-color: red;
-    margin-right: 0.5rem;
+    #color-mode-light {
+        background-color: white;
+        color: black;
+        border-radius: 5px 0 0 5px;
+    }
 }

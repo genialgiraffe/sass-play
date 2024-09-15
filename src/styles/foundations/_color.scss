@@ -21,7 +21,7 @@ $color-mid-brown: #863100;
     --setting-filter: #{$filter};
 }
 
-@mixin colors() {
+@mixin init() {
     :root {
         @include -init($color-dark-red,
             $color-mid-pink,
@@ -30,19 +30,19 @@ $color-mid-brown: #863100;
             $color-dark-red,
             $color-mid-pink,
             0);
-    }
 
-    :root[data-theme="dark"] {
-        @include -init($color-mid-yellow,
-            $color-mid-yellow,
-            black,
-            $color-dark-brown,
-            $color-mid-brown,
-            $color-mid-yellow,
-            1);
+        &[data-theme="dark"] {
+            @include -init($color-mid-yellow,
+                $color-mid-yellow,
+                black,
+                $color-dark-brown,
+                $color-mid-brown,
+                $color-mid-yellow,
+                1);
 
-        .invertible {
-            filter: invert(var(--setting-filter));
+            .invertible {
+                filter: invert(var(--setting-filter));
+            }
         }
     }
 }
